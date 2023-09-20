@@ -1,0 +1,54 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="col">
+  <h2> Contacts Details</h2>
+<div class="row">
+  <div class="col m-1">
+    <form method="POST" action="">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger" value="submit">Delete All</button>
+    </form>
+  </div>
+  <div class="col m-1">
+    <a href="{% url 'contact_create' %}"><button class="btn btn-primary">Add new</button></a>
+  </div>
+</div>
+ </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">File</th>
+          <th scope="col">contact</th>
+          <th scope="col">Client</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        
+ {% for company_contact in company_contacts %}
+ <tr>
+  <th scope="row">{{company_contact.id}}</th>
+  <td>{{company_contact.date}}</td>
+  <td>{{company_contact.upload_contact_file}}</td>
+  <td>{{company_contact.add_contact}}</td>
+  <td>{{company_contact.client}}</td>
+  <td>
+    <a href="" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+    <a href="" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+    <a href="" class="delete" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+</td>
+</tr>
+ {% endfor %}
+   
+
+      </tbody>
+    </table>
+  </div>
+
+<!-- Left side columns -->
+{% endblock content %}

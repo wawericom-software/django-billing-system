@@ -1,0 +1,60 @@
+{% extends "Dashboard/base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>Payment gateways</b> <b>Details</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <!--Delete all button-->
+            <div class="col m-1">
+
+                <button type="submit" class="btn btn-danger"><a style="color:white;" href="{% url 'payment_gateways_delete' %}">Delete all</a></button>
+
+            </div>
+            <!--Add new Product-->
+            <div class="col m-1">
+               <a href="{% url 'payment_gateway_create' %}"> <button type="submit" class="btn btn-primary">Add payment  gateway</button></a>
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">name</th>
+                      <th scope="col">logo</th>
+                      <th scope="col"> Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for company_payment_gateway in  company_payment_gateways  %}
+                <tr>
+                  <th>{{ company_payment_gateway.id}}</th>
+                  <td scope="row">{{ company_payment_gateway.name }}</td>
+                  <td scope="col">{{ company_payment_gateway.logo }}</td>
+                  <td>
+                    <a href="{% url 'payment_gateway_detail' company_payment_gateway.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+                    <a href="{% url 'payment_gateway_update' company_payment_gateway.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+                    <a href="{% url 'payment_gateway_delete' company_payment_gateway.pk %}" class="delete" title="delete" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+             </td>
+                  <style>
+                    .lin{
+                      color : black;
+
+                    }
+                  </style>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}
