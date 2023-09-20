@@ -1,0 +1,48 @@
+{% extends "Dashboard/base.html" %}
+
+{% block content %}
+<div class="container-xl">
+  <div class="table-responsive">
+      <div class="table-wrapper">
+          <div class="table-title">
+              <div class="row">
+                  <div class="col-sm-8"><h2><b>Invoices</b> <b>Details</b></h2></div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col m-1">
+            <button class="btn btn-danger"><a href="{% url 'payment_invoices_delete'  %}" class="delete" style="color:white;">Delete All</a></button>
+            </div>
+            <div class="col">
+               <a href="{% url 'payment_invoice_create' %}"><button class="btn btn-primary">Add New</button></a> 
+            </div>
+          </div>
+          <table class="table table-striped table-hover table-bordered">
+              <thead>
+                  <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Client Name</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+    {% for payment_invoice in payment_invoices %}
+    <tr>
+        <td>{{ payment_invoice.date }}</td>
+        <td scope="row">{{ payment_invoice.client_name }}</td>
+        <td scope="row">{{ payment_invoice.status }}</td>
+        <td>
+              <a href="{% url 'payment_invoice_detail' payment_invoice.pk %}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>View</a>
+              <a href="{% url 'payment_invoice_update' payment_invoice.pk %}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i>Edit</a>
+              <a href="{% url 'payment_invoice_delete' payment_invoice.pk %}" class="delete" title="delete" data-toggle="tooltip"><i class="material-icons">&#xE517;</i>Delete</a>
+       </td>
+      </tr>
+    {% endfor %}
+              </tbody>
+          </table>
+          
+      </div>
+  </div>  
+</div>   
+{% endblock content %}
