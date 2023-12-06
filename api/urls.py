@@ -1,6 +1,11 @@
 from django.urls import path
 from . import views
-from . views import *
+from . views import ClientListCreateView, ContactRetrieveUpdateDestroyView, Payment_gatewayListCreateView, Payment_gatewayRetrieveUpdateDestroyView
+from . views import Payment_invoiceListCreateView, Payment_invoiceRetrieveUpdateDestroyView, WhatsppListCreateView, WhatsppRetrieveUpdateDestroyView
+from . views import SmsListCreateView, SmsRetrieveUpdateDestroyView, EmailListCreateView, EmailRetrieveUpdateDestroyView
+from . views import ContactListCreateView, ContactRetrieveUpdateDestroyView, campaignListCreateView, campaignRetrieveUpdateDestroyView
+from . views import PackagesListCreateView, PackagesRetrieveUpdateDestroyView, ProductItemListCreateView, ProductItemRetrieveUpdateDestroyView
+from . views import OrderItemListCreateView, OrderItemRetrieveUpdateDestroyView, PaymentListCreateView, PaymentRetrieveUpdateDestroyView
 
 urlpatterns = [
     path('', views.api_index, name='api_index'),
