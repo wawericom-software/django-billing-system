@@ -6,6 +6,7 @@ from . views import SmsListCreateView, SmsRetrieveUpdateDestroyView, EmailListCr
 from . views import ContactListCreateView, ContactRetrieveUpdateDestroyView, campaignListCreateView, campaignRetrieveUpdateDestroyView
 from . views import PackagesListCreateView, PackagesRetrieveUpdateDestroyView, ProductItemListCreateView, ProductItemRetrieveUpdateDestroyView
 from . views import OrderItemListCreateView, OrderItemRetrieveUpdateDestroyView, PaymentListCreateView, PaymentRetrieveUpdateDestroyView
+from . views import profile_viewsListCreateView, profile_viewsRetrieveUpdateDestroyView
 
 urlpatterns = [
     path('', views.api_index, name='api_index'),
@@ -57,4 +58,8 @@ urlpatterns = [
     # Urls for payments
     path('payments/', PaymentListCreateView.as_view(), name='payment_list_create'),
     path('payment/<int:pk>/', PaymentRetrieveUpdateDestroyView.as_view(), name='PaymentRetrieveUpdateDestroyView'),
+
+    #Urls for profile
+    path('profiles/', profile_viewsListCreateView.as_view(), name='profile_list_create_view'),
+    path('profile/<int:pk>/', profile_viewsRetrieveUpdateDestroyView.as_view(), name='profile_viewsRetrieveUpdateDestroyView')
 ]

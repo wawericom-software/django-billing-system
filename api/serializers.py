@@ -62,3 +62,7 @@ class PaymentSerializer(serializers.ModelSerializer):
         model = Payment
         fields = '__all__'
         
+class profile_viewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User 
+        fields = '__all__'

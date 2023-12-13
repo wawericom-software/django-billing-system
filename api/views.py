@@ -103,4 +103,11 @@ class PaymentRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
         
-        
+
+class profile_viewsListCreateView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = profile_viewsSerializer
+
+class profile_viewsRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = profile_viewsSerializer

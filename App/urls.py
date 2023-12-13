@@ -153,4 +153,11 @@ urlpatterns = [
     path('renewal_delete/<int:pk>/', renewal_views.renewal_delete, name='renewal_delete'),
     path('renewals/', renewal_views.renewals_detail, name='renewals_detail'),
     path('renewals_delete/', renewal_views.renewals_delete, name='renewals_delete'),
+
+    # Urls for Profile
+    path('profile/new/', profile_views.profile_viewsCreateView.as_view(), name='profile_create'),
+    path('profile/<int:pk>/edit', profile_views.profile_viewsUpdateView.as_view(), name='profile_update'),
+    path('profile/details/', profile_views.profile_viewsListView.as_view(), name='profile_details'),
+    path('profile/<int:pk>/detail/', profile_views.profile_viewsDetailView.as_view(), name='profile_detail'),
+    path('profile/<int:pk>/delete', profile_views.profile_viewsDeleteView.as_view(), name='profile_view_delete'),
 ]
