@@ -6,6 +6,7 @@ from . forms import *
 from datetime import datetime
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, login
 
 # Create your views here.
 def index(request):
@@ -74,4 +75,5 @@ def login(request):
 
 # logout function
 def logout(request):
-    pass
+    logout(request)
+    return redirect('')
