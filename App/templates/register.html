@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>login </title>
+    <title>Register</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -61,13 +61,13 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                        <p class="text-center small">Enter your username & password to login</p>
+                                        <h5 class="card-title text-center pb-0 fs-4">Register For an  Account</h5>
+                                        <p class="text-center small">Enter  Username & Password to Register</p>
                                     </div>
 
 
                                     <form class="row g-3 needs-validation" method="POST" action="">
-                                        <h2>Register</h2>
+
                                         <form method="post" action="{% url 'register' %}">
                                             {% csrf_token %}
                                             {{ form.as_p }}
