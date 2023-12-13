@@ -123,6 +123,11 @@ class PackagesForm(forms.ModelForm):
     class Meta:
         model = Packages
         fields = '__all__'
+
+class UsersForm(forms.ModelForm):
+    class Meta:
+        model = User 
+        fields = '__all__'
         
 
         
