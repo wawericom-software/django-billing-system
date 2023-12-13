@@ -1,5 +1,12 @@
 from django import forms
 from . models import *
+from django.contrib.auth.forms import UserCreationForm
+
+class SignUpForm(UserCreationForm):
+    # You can customize the form fields if needed
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2')
 
 class clientForm(forms.ModelForm):
    #Metadata
@@ -117,4 +124,5 @@ class PackagesForm(forms.ModelForm):
         model = Packages
         fields = '__all__'
         
+
         

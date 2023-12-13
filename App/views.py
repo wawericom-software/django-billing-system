@@ -6,7 +6,7 @@ from . forms import *
 from datetime import datetime
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout, login
+from django.contrib.auth import logout, login, authenticate
 
 # Create your views here.
 def index(request):
@@ -68,6 +68,18 @@ def settings(request):
 def profile(request):
     return render(request, "Dashboard/profile.html")
 
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Log in the user after registration
+            return redirect('home')  # Redirect to the home page or any other page after registration
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
 
 # login function
 def login(request):

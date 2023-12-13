@@ -3,6 +3,7 @@ from . import views, client_views,product_views,refund_views,coupon_views,Addres
 from . import Payment_views, Payment_invoice_views,package_views,order_item_views,profile_views
 from . import order_views,payment_gateway_views,whatspp_module_views,sms_module_views
 from . import email_module_views,contact_views, campaign_views, BalanceSheet_views, renewal_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # global system url routes
@@ -13,8 +14,9 @@ urlpatterns = [
     path('yearlyReports/', views.yearlyReports, name='yearlyReports'),
     path('settings/', views.settings, name='settings'),
     path('profile/', views.profile, name='profile'),
-    path('login/', views.login, name='login'),
-    path('logout/', views.logout, name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('register/', views.register, name='register'), 
     
     # urls routes for client create read update and delete
     path('client/', client_views.client_create, name='client_create'),
