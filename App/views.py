@@ -75,5 +75,4 @@ def login(request):
 
 # logout function
 def logout(request):
-    logout(request)
-    return redirect('')
+    return redirect('/')
