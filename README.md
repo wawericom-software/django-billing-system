@@ -31,5 +31,7 @@ Billing System for auto renewal of payments for SAAS products
 
  more infor https://github.com/symotedz/web-analytics-system/blob/analyticsweb/system.md
 
+ <a href="https://wakatime.com/badge/github/wawericom-software/django-billing-system"><img src="https://wakatime.com/badge/github/wawericom-software/django-billing-system.svg" alt="wakatime"></a>
+
 
 
