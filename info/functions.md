@@ -118,3 +118,50 @@ print(response.get("setup_url"))
     "created_at": "2020-08-03T15:08:32.283968+03:00",
     "updated_at": "2020-08-03T15:08:32.283992+03:00"
 }]
+
+## fund a wallet
+from intasend import APIService
+
+publishable_key = "INTASEND_PUBLISHABLE_KEY"
+
+service = APIService(publishable_key=publishable_key, test=True)
+
+response = service.collect.mpesa_stk_push(wallet_id="<TARGETED-WALLET-ID>", phone_number=2547...,
+                                  email="joe@doe.com", amount=10, narrative="Purchase")
+print(response)
+
+## Internal Transfers between wallets
+from intasend import APIService
+
+service = APIService(token="token", test=True)
+
+amount = 1000
+narrative = "Payment"
+response = service.wallets.intra_transfer(<origin_wallet_id>, <destination_wallet_id>, amount, narrative)
+print(response)
+
+## Eternal Transfers
+from intasend import APIService
+
+service = APIService(token="token" private_key=private_key, test=True)
+
+transactions = [{'name': 'Awesome Customer 1', 'account': 25472.., 'amount': 10},
+                {'name': 'Awesome Customer 2', 'account': 25472.., 'amount': 10000}]
+
+response = service.transfer.mpesa(wallet_id='<PAYING-OUT-WALLET-ID>', device_id='<DEVICE-ID>', currency='KES', transactions=transactions)
+print(response)
+
+## Refund
+from intasend import APIService
+
+token = "YOUR-API-TOKEN"
+service = APIService(token="token")
+
+response = service.chargebacks.create(invoice, amount, reason, reason_details)
+print(response)
+
+Field	Description
+invoice	Invoice id of the transaction. This ID is normally returned in the complete card transaction as tracking_id or invoice_id
+amount	Amount to be refunded. Must be equal or less than the billed amount
+reason	Reason for refund (brief/summary)
+reason_details	More details on the reason provided
