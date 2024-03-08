@@ -39,7 +39,7 @@ TEMPLATE_CONFIG = {
 THEME_VARIABLES = {
     "creator_name": "simon kamau",
     "creator_url": "https://pixinvent.com/",
-    "template_name": "image sync",
+    "template_name": "billing system",
     "template_suffix": "Django Admin Template",
     "template_version": "1.2.0",
     "template_free": True,
