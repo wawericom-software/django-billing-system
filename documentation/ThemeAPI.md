@@ -1,5 +1,5 @@
-### ImageSync Theme API
-Use Template API class written in Python to efficiently use Vuexy templates in Django projects of any complexity.
+###  Theme API
+Use Template API class written in Python to efficiently use this templates in Django projects of any complexity.
 
 ### Template Helpers#
 init_context() - Init the Template Context using TEMPLATE_CONFIG.

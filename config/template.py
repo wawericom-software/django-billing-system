@@ -10,7 +10,7 @@
 TEMPLATE_CONFIG = {
     "layout": "vertical",             # Options[String]: vertical(default), horizontal
     "theme": "theme-default",         # Options[String]: theme-default(default), theme-bordered, theme-semi-dark
-    "style": "light",                 # Options[String]: light(default), dark, system mode
+    "style": "dark",                 # Options[String]: light(default), dark, system mode
     "rtl_support": True,              # options[Boolean]: True(default), False # To provide RTLSupport or not
     "rtl_mode": False,                # options[Boolean]: False(default), True # To set layout to RTL layout  (myRTLSupport must be True for rtl mode)
     "has_customizer": True,           # options[Boolean]: True(default), False # Display customizer or not THIS WILL REMOVE INCLUDED JS FILE. SO LOCAL STORAGE WON'T WORK
@@ -40,10 +40,10 @@ THEME_VARIABLES = {
     "creator_name": "simon kamau",
     "creator_url": "https://pixinvent.com/",
     "template_name": "billing system",
-    "template_suffix": "Django Admin Template",
+    "template_suffix": "billing system",
     "template_version": "1.2.0",
     "template_free": True,
-    "template_description": "imagesync is a modern, clean and fully responsive admin template built with Bootstrap 5, Django, HTML, CSS, jQuery, and JavaScript. It has a huge collection of reusable UI components and integrated with the latest jQuery plugins. It can be used for all types of web applications like custom admin panel, project management system, admin dashboard, Backend application or CRM.",
+    "template_description": "billing system is a modern, clean and fully responsive admin template built with Bootstrap 5, Django, HTML, CSS, jQuery, and JavaScript. It has a huge collection of reusable UI components and integrated with the latest jQuery plugins. It can be used for all types of web applications like custom admin panel, project management system, admin dashboard, Backend application or CRM.",
     "template_keyword": "django, django admin, dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5",
     "facebook_url": "https://www.facebook.com/pixinvents/",
     "twitter_url": "https://twitter.com/pixinvents",

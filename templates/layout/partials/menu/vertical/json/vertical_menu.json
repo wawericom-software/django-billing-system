@@ -16,15 +16,15 @@
         },
 
         {
-          "url": "/app/ecommerce/dashboard",
+          "url": "/app/billing/dashboard",
           "external": true,
-          "name": "E-Commerce",
+          "name": "Billing",
           "slug": "app-ecommerce-dashboard"
         },
         {
           "url": "/app/logistics/dashboard",
           "external": true,
-          "name": "Logistics",
+          "name": "B-Flow",
           "slug": "app-logistics-dashboard"
         },
         {
@@ -161,7 +161,7 @@
       "slug": "app-kanban"
     },
     {
-      "name": "eCommerce",
+      "name": "Billing",
       "icon": "menu-icon tf-icons ti ti-shopping-cart",
       "slug": "app-ecommerce",
       "submenu": [

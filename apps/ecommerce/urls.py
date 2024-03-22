@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path(
-        "app/ecommerce/dashboard/",
+        "app/billing/dashboard/",
         login_required(eCommerceView.as_view(template_name="app_ecommerce_dashboard.html")),
         name="app-ecommerce-dashboard",
     ),

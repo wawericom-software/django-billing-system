@@ -1088,11 +1088,11 @@
       "target": "_blank"
     },
     {
-      "url": "https://demos.pixinvent.com/vuexy-html-admin-template/documentation/django-introduction.html",
+      "url": "#/support",
       "external": true,
       "icon": "menu-icon tf-icons ti ti-file-description",
-      "name": "Documentation",
-      "slug": "documentation",
+      "name": "API",
+      "slug": "API",
       "target": "_blank"
     }
   ]
